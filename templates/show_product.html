@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block title%}查看商品{% endblock %}
+
+{% block head%}
+<link rel="stylesheet" href="{{url_for('static',filename='css/show_product.css')}}" class="css">
+{% endblock %}
+
+{% block main%}
+    <ul class="product-list-group">
+        {% for product in products%}
+            <li>
+                <div class="product-group">
+                    <p class="product-title"><a href="#">{{product.productname}}</a></p>
+                    <p class="product-link">{{product.link}}</p>
+                    <p class="product-about">{{product.about}}</p>
+                    <div class="upload-info">
+                        <span class="uploader">{{product.uploader.username}}</span>
+                        <span class="time">{{product.create_time}}</span>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

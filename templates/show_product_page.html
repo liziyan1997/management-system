@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+
+{% block title%}查看商品{% endblock %}
+
+{% block head%}
+<link rel="stylesheet" href="{{url_for('static',filename='css/show_product_page.css')}}" class="css">
+{% endblock %}
+
+{% block main%}
+    <ul class="product-list-group">
+        {% for product in products%}
+            <li>
+                <div class="product-group">
+                    <p class="product-title"><a href="#">{{product.productname}}</a></p>
+                    <p class="product-link">{{product.link}}</p>
+                    <p class="product-about">{{product.about}}</p>
+                    <div class="upload-info">
+                        <span class="uploader">{{product.uploader.username}}</span>
+                        <span class="time">{{product.create_time}}</span>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="pagination-group">
+        <nav aria-label="Page navigation">
+            <ul class="pagination pagination-lg">
+              <li>
+                <a href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">...</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li>
+                <a href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+    </div>
+    
+
+{% endblock %}

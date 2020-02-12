@@ -1,0 +1,23 @@
+ul.product-list-group{
+    list-style: none;
+    padding-left: 0px;
+}
+
+ul.product-list-group li{
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.product-title a{
+    color: #259;
+    font-weight: 900;
+}
+
+.upload-info{
+    text-align: right;
+}
+
+.upload-info .uploader{
+    margin-right: 20px;
+}
